@@ -65,3 +65,5 @@ docker run -d -p 8181:80 --restart=always baiyuetribe/oneindex
 **方法二：caddy反代（没有宝塔时的策略）**
 
 设置较为麻烦，请参考：https://www.moerats.com/archives/422/
+
+**文章来源** ：[佰阅部落](https://baiyue.one/archives/457.html)
