@@ -22,7 +22,7 @@ $script_path = $_SERVER['DOCUMENT_ROOT'].'/one.php';
 <div class="mdui-container-fluid">
 
 	<div class="mdui-typo">
-	  <h1> 页面缓存 <small>清除所有页面缓存</small></h1>
+	  <h1> 页面缓存 <small>默认每10分钟自动刷新，如需立马生效，请手动点击重建缓存</small></h1>
 	</div>
 	<br>
 	<br>
@@ -51,8 +51,8 @@ $script_path = $_SERVER['DOCUMENT_ROOT'].'/one.php';
 	<div class="mdui-typo">
       <h4 class="doc-article-title">crontab定时刷新缓存 <small>能极大提高系统访问性能</small></h4>
       <p>
-        添加以下命令到crontab<Br>
-      	<code>*/10 * * * *  <?php echo "{$php_path} {$script_path} cache:refresh";?></code>
+        默认每10分钟自动刷新<Br>
+      	
       </p>
     </div>
 	

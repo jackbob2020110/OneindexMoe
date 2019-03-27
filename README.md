@@ -1,39 +1,38 @@
-# OneIndex
-Onedrive Directory Index
+# OneIndex-mod
+Onedrive Directory Index mod
 
 ## 功能：
-不占用服务器空间，不走服务器流量，  
+不占用服务器空间，不走服务器流量，  直接列出 OneDrive 目录，文件直链下载。  
 
-直接列出 OneDrive 目录，文件直链下载。  
+## mod特点
+1.采用最新down/oneindex,萌化默认主题
+2.无需手动设置定时任务，后台每10分钟自动刷新
+3.docker全自动搭建
 
-## Demo
-[https://xn.tn](https://xn.tn)  
+## 本站Demo
+[https://cloud.baiyue.one](https://cloud.baiyue.one)  
 
 ## 安装运行
 
-### 源码安装运行：
+#### 必要条件：
+OneDrive 账号 如需5T云盘，[点击传送门](https://mall.baiyue.one/product/11.html) 
 
-#### 需求：
-1、PHP空间，PHP 5.6+ 需打开curl支持  
-2、OneDrive 账号 (个人、企业版或教育版/工作或学校帐户)  
-3、OneIndex 程序   
+## docker安装
+首先安装docker【已安装的可跳过】
 
-## 配置：
+```
+docker version > /dev/null || curl -fsSL get.docker.com | bash 
+service docker restart 
+systemctl enable docker  #设置开机自启
+```
+之后执行安装命令
+```
+docker run -d -p 8181:80 --restart=always baiyuetribe/oneindex
+```
+完成后输入http://ip:8181 按提示操作即可。
+
 <img width="658" alt="image" src="https://raw.githubusercontent.com/donwa/oneindex/files/images/install.gif">  
 
-### 计划任务  
-[可选]**推荐配置**，非必需。后台定时刷新缓存，可增加前台访问的速度。  
-```
-# 每小时刷新一次token
-0 * * * * /具体路径/php /程序具体路径/one.php token:refresh
-
-# 每十分钟后台刷新一遍缓存
-*/10 * * * * /具体路径/php /程序具体路径/one.php cache:refresh
-```
-
-### Docker 安装运行
-
-- 请参考[TimeBye/oneindex](https://github.com/TimeBye/oneindex)
 
 ## 特殊文件实现功能  
 ` README.md `、`HEAD.md` 、 `.password`特殊文件使用  
@@ -53,43 +52,7 @@ Onedrive Directory Index
 >在 OneDrive 的文件夹中添加`index.html` 文件，程序会直接输出网页而不列目录。  
 >配合 文件展示设置-直接输出 效果更佳。  
 
-## 命令行功能  
-仅能在PHP CLI模式下运行  
 
-**清除缓存:**  
-```
-php one.php cache:clear
-```
-**刷新缓存:**  
-```
-php one.php cache:refresh
-```
-**刷新令牌:**  
-```
-php one.php token:refresh
-```
 **上传文件:**  
-```
-php one.php upload:file 本地文件 [OneDrive文件]
-```
 
-
-**上传文件夹:**  
-```
-php one.php upload:folder 本地文件夹 [OneDrive文件夹]
-```
-
-例如：  
-```
-//上传demo.zip 到OneDrive 根目录  
-php one.php upload:file demo.zip  
-
-//上传demo.zip 到OneDrive /test/目录  
-php one.php upload:file demo.zip /test/  
-
-//上传demo.zip 到OneDrive /test/目录并将其命名为 d.zip  
-php one.php upload:file demo.zip /test/d.zip  
-
-//上传up/ 到OneDrive /test/ 目录  
-php one.php upload:file up/ /test/
-```
+推荐使用系统自带的OneDrive程序客户端或者使用RaiDrive进行文件的修改、上传、删除操作。
