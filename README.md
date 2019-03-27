@@ -29,7 +29,7 @@ systemctl enable docker  #设置开机自启
 ```
 docker run -d -p 8181:80 --restart=always baiyuetribe/oneindex
 ```
-完成后输入http://ip:8181 按提示操作即可。
+完成后输入http://ip:8181 按提示操作即可。如需域名访问，请参考结尾。
 
 <img width="658" alt="image" src="https://raw.githubusercontent.com/donwa/oneindex/files/images/install.gif">  
 
@@ -44,9 +44,6 @@ docker run -d -p 8181:80 --restart=always baiyuetribe/oneindex
 **在文件夹底部添加说明:**  
 >在 OneDrive 的文件夹中添加` README.md `文件，使用 Markdown 语法。  
 
-**在文件夹头部添加说明:**  
->在 OneDrive 的文件夹中添加`HEAD.md` 文件，使用 Markdown 语法。  
-
 **加密文件夹:**  
 >在 OneDrive 的文件夹中添加`.password`文件，填入密码，密码不能为空。  
 
@@ -58,3 +55,13 @@ docker run -d -p 8181:80 --restart=always baiyuetribe/oneindex
 **上传文件:**  
 
 推荐使用系统自带的OneDrive程序客户端或者使用RaiDrive进行文件的修改、上传、删除操作。
+
+## 域名访问
+**方法一：宝塔反代**
+先进入宝塔面板，点击左侧网站，添加站点，完成后进入网站设置，点击反向代理，目标`URL`填入`http://127.0.0.1:代理端口`（*代理端口*就是docker应用的外接接口），再启用反向代理即可。如果想启用`SSL` ，就直接在站点配置即可。
+
+![](https://ww1.sinaimg.cn/large/007i4MEmgy1g04u3wlh5oj30kx0htaci.jpg)
+
+**方法二：caddy反代（没有宝塔时的策略）**
+
+设置较为麻烦，请参考：https://www.moerats.com/archives/422/
