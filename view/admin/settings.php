@@ -20,7 +20,7 @@
 				    $styles[$k] = trim($s, '/');
 				}
 				$styles = array_diff($styles, [".", "..", "admin"]);
-				$style = config("style")?config("style"):'material';
+				$style = config("style")?config("style"):'nexmoe';
 				$cache_type  = config("cache_type")?config("cache_type"):'secache';
 			 	foreach($styles as $style_name):
 			  ?>
