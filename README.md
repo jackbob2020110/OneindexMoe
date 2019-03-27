@@ -34,6 +34,8 @@ docker run -d -p 8181:80 --restart=always baiyuetribe/oneindex
 <img width="658" alt="image" src="https://raw.githubusercontent.com/donwa/oneindex/files/images/install.gif">  
 
 
+最终效果：
+![](https://ww1.sinaimg.cn/large/007i4MEmgy1g1h9f6wh8sj31gy0ps1kx.jpg)
 ## 特殊文件实现功能  
 ` README.md `、`HEAD.md` 、 `.password`特殊文件使用  
 
