@@ -8,6 +8,7 @@ Onedrive Directory Index mod
 1.采用最新down/oneindex,萌化默认主题
 2.无需手动设置定时任务，后台每10分钟自动刷新
 3.docker全自动搭建
+4.新增导航栏+支持修改背景图
 
 ## 本站Demo
 [https://cloud.baiyue.one](https://cloud.baiyue.one)  
