@@ -1,4 +1,4 @@
-# OneIndex-mod
+# 基于OneIndex-mod 修改，适配：世纪互联版
 Onedrive Directory Index mod
 
 ## 功能：
