@@ -3,15 +3,28 @@
 		static $client_id;
 		static $client_secret;
 		static $redirect_uri;
-		static $api_url = 'https://graph.microsoft.com/v1.0';
-		static $oauth_url = 'https://login.microsoftonline.com/common/oauth2/v2.0';
+
+		//static $api_url = 'https://graph.microsoft.com/v1.0';
+		//static $oauth_url = 'https://login.microsoftonline.com/common/oauth2/v2.0';
+
+		// 世纪互联版
+		static $api_url = 'https://microsoftgraph.chinacloudapi.cn/v1.0';
+		static $oauth_url = 'https://login.chinacloudapi.cn/common/oauth2';
 
 		//验证URL，浏览器访问、授权
 		static function authorize_url(){
 			$client_id = self::$client_id;
-			$scope = urlencode("offline_access files.readwrite.all");
+			
+			//$scope = urlencode("offline_access files.readwrite.all");
+
+			$resource = 'https://microsoftgraph.chinacloudapi.cn';
+
 			$redirect_uri = self::$redirect_uri;
-			$url = self::$oauth_url."/authorize?client_id={$client_id}&scope={$scope}&response_type=code&redirect_uri={$redirect_uri}";
+			
+			//$url = self::$oauth_url."/authorize?client_id={$client_id}&scope={$scope}&response_type=code&redirect_uri={$redirect_uri}";
+			
+			$url = self::$oauth_url."/authorize?client_id={$client_id}&resource={$resource}&response_type=code&redirect_uri={$redirect_uri}";
+			
 			
 			if($_SERVER['HTTP_HOST'] != 'localhost'){
 				$url .= '&state='.urlencode('http://'.$_SERVER['HTTP_HOST'].get_absolute_path(dirname($_SERVER['PHP_SELF'])));
